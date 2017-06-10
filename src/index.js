@@ -18,9 +18,9 @@ const AppRouter = () => {
         <Route exact path="/" component={App} />
         <Route path="/home" component={Home} />
         <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
         <Route path="/contact" component={Contact} />
         <Route path="/faq" component={Faq} />
-        <Route path="/register" component={Register} />
       </div>
     </HashRouter>
   )
