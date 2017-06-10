@@ -20,7 +20,6 @@ const AppRouter = () => {
         <Route path="/login" component={Login} />
         <Route path="/contact" component={Contact} />
         <Route path="/faq" component={Faq} />
-        <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
       </div>
     </HashRouter>

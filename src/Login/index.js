@@ -88,6 +88,121 @@ class App extends Component {
             </li>
           </ul>
         </div>
+
+        <div className="panel-control-right">
+          <div id="slide-out-right" className="side-nav">
+            <div className="row entry">
+              <div className="col s4">
+                <img src="img/cart1.jpg" alt="" />
+              </div>
+              <div className="col s6">
+                <div className="desc">
+                  <h6>Luxury Room</h6>
+                  <div className="rating">
+                    <span className="active"><i className="fa fa-star"></i></span>
+                    <span className="active"><i className="fa fa-star"></i></span>
+                    <span className="active"><i className="fa fa-star"></i></span>
+                    <span className="active"><i className="fa fa-star"></i></span>
+                    <span className=""><i className="fa fa-star"></i></span>
+                  </div>
+                  <h6><span>$150.00</span></h6>
+                </div>
+              </div>
+              <div className="col s2">
+                <div className="action">
+                  <i className="fa fa-remove"></i>
+                </div>
+              </div>
+            </div>
+            <div className="row entry">
+              <div className="col s4">
+                <img src="img/cart2.jpg" alt="" />
+              </div>
+              <div className="col s6">
+                <div className="desc">
+                  <h6>Beautiful Room</h6>
+                  <div className="rating">
+                    <span className="active"><i className="fa fa-star"></i></span>
+                    <span className="active"><i className="fa fa-star"></i></span>
+                    <span className="active"><i className="fa fa-star"></i></span>
+                    <span className=""><i className="fa fa-star"></i></span>
+                    <span className=""><i className="fa fa-star"></i></span>
+                  </div>
+                  <h6><span>$150.00</span></h6>
+                </div>
+              </div>
+              <div className="col s2">
+                <div className="action">
+                  <i className="fa fa-remove"></i>
+                </div>
+              </div>
+            </div>
+            <div className="row price">
+              <div className="col s8">
+                <h6>Total</h6>
+              </div>
+              <div className="col s4">
+                <h6>$300.00</h6>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <button className="button">Book Now</button>
+              </li>
+              <li>
+                <button className="button">View Cart</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="login app-pages app-section">
+          <div className="container">
+            <div className="pages-title">
+              <h3>Login</h3>
+            </div>
+            <form action="#">
+              <input type="email" placeholder="Email" />
+              <input type="password" placeholder="password" />
+              <div><a href="" className="forgot">Forgot Password?</a></div>
+              <div className="chebox">
+                <input type="checkbox" id="checkbox" />
+                  <label for="checkbox">Remember me</label>
+              </div>
+              <button className="button">Login</button>
+              <div className="create-account">Not Registered? <a href="">Create an account</a></div>
+            </form>
+            <div className="or">
+              <h5>OR</h5>
+              <button className="button facebook">Login with Facebook</button>
+              <button className="button twitter">Login with Twitter</button>
+              <button className="button google">Login with Google+</button>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          <div className="container">
+            <h6>Find & follow us</h6>
+            <ul className="icon-social">
+              <li className="facebook"><a href=""><i className="fa fa-facebook"></i></a></li>
+              <li className="twitter"><a href=""><i className="fa fa-twitter"></i></a></li>
+              <li className="google"><a href=""><i className="fa fa-google"></i></a></li>
+              <li className="instagram"><a href=""><i className="fa fa-instagram"></i></a></li>
+              <li className="rss"><a href=""><i className="fa fa-rss"></i></a></li>
+            </ul>
+            <div className="tel-fax-mail">
+              <ul>
+                <li><span>Tel:</span> 900000o02</li>
+                <li><span>Fax:</span> 0400000o98</li>
+                <li><span>Email:</span> info@youremail.com</li>
+              </ul>
+            </div>
+            <div className="ft-bottom">
+              <span>Copyright © 2017 All Rights Reserved </span>
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
