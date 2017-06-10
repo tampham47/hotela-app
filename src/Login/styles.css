@@ -1,0 +1,25 @@
+.home {
+  background-color: whitesmoke;
+}
+
+.home h2 {
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+form {
+  padding: 12px;
+}
+
+form input {
+  width: 100%;
+  border: 1px solid red;
+  margin-bottom: 12px;
+  line-height: 22px;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: greenyellow;
+  border: 1px ;
+}
