@@ -4,27 +4,43 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 import './styles.css';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      form: {},
+    };
+
+    this.onNameChange = this.onNameChange.bind(this);
+    this.onPostComment = this.onPostComment.bind(this);
+  }
+
+  componentDidMount() {}
+
+  onPostComment(e) {
+    e.preventDefault();
+    alert('Post Comment Clicked !' + JSON.stringify(this.state.form));
+  }
+
+  onNameChange(e) {
+    console.log('onNameChange', e.target.value);
+    this.setState({
+      form: {
+        name: e.target.value
+      }
+    });
+  }
+
   render() {
     return (
       <div>
-        <div className="navbar">
-          <div className="container">
-            <div className="panel-control-left">
-              <a href="#" data-activates="slide-out-left" className="sidenav-control-left"><i className="fa fa-bars"></i></a>
-            </div>
-            <div className="site-title">
-              <a href="index.html" className="logo"><h1>HOTELA</h1></a>
-            </div>
-            <div className="panel-control-right">
-              <a href="#" data-activates="slide-out-right" className="sidenav-control-right"><i className="fa fa-shopping-bag"></i><span>2</span></a>
-            </div>
-          </div>
-        </div>
+        <Navbar title="Room Detail" />
 
         <div className="panel-control-left">
           <ul id="slide-out-left" className="side-nav collapsible"  data-collapsible="accordion">
@@ -193,11 +209,16 @@ class App extends Component {
               <h6>Post Comments</h6>
               <div className="content">
                 <form action="#">
-                  <input type="text" placeholder="Name" />
-                  <input type="email" placeholder="Email" />
-                  <input type="text" placeholder="Website" />
-                  <textarea cols="20" rows="10" placeholder="Comment"></textarea>
-                  <button className="button">Post Comment</button>
+                  <input type="text" placeholder="Name 2"
+                    value={this.state.form.name}
+                    onChange={this.onNameChange} />
+                  <input type="email" placeholder="Email"
+                    value={this.state.form.email} />
+                  <input type="text" placeholder="Website"
+                    value={this.state.form.website} />
+                  <textarea cols="20" rows="10" placeholder="Comment"
+                    value={this.state.form.comment}></textarea>
+                  <button className="button" onClick={this.onPostComment}>Post Comment</button>
                 </form>
               </div>
             </div>
