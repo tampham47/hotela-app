@@ -4,7 +4,7 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import Navbar from '../components/Navbar';
 import './styles.css';
 
 
@@ -12,19 +12,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="navbar">
-          <div className="container">
-            <div className="panel-control-left">
-              <a href="#" data-activates="slide-out-left" className="sidenav-control-left"><i className="fa fa-bars"></i></a>
-            </div>
-            <div className="site-title">
-              <a href="index.html" className="logo"><h1>HOTELA</h1></a>
-            </div>
-            <div className="panel-control-right">
-              <a href="#" data-activates="slide-out-right" className="sidenav-control-right"><i className="fa fa-shopping-bag"></i><span>2</span></a>
-            </div>
-          </div>
-        </div>
+        <Navbar title="Register" />
 
         <div className="panel-control-left">
           <ul id="slide-out-left" className="side-nav collapsible"  data-collapsible="accordion">

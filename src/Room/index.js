@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import request from 'request';
 
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import './styles.css';
 
@@ -14,20 +15,27 @@ import './styles.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log('constructor');
+
+    this.state = {
+      data: [],
+    }
   }
 
   componentDidMount() {
     console.log('componentDidMount');
 
     request({
-      method: 'GET',
-      uri: 'http://35.162.241.129:3000/api/v1/room',
+      method: 'get',
+      url: 'http://35.162.241.129:3000/api/v1/room',
     }, function (error, response, body) {
       console.log('error:', error);
-      console.log('statusCode:', response && response.statusCode);
-      console.log('body:', body);
-    });
+      const data = JSON.parse(body);
+      console.log('data:', typeof data, data);
+
+      this.setState({
+        data: data
+      })
+    }.bind(this));
   }
 
   componentWillUnmount() {
@@ -173,72 +181,29 @@ class App extends Component {
 
         <div className="rooms app-pages app-section">
           <div className="container">
-            <div className="row">
-              <div className="col s6">
-                <div className="entry">
-                  <img src="img/room1.jpg" alt="" />
-                  <div className="content">
-                    <h5><a href="">Beautiful Rooms</a></h5>
-                    <p>Lorem ipsum dolor sit amet . . .</p>
-                    <h6><span>$190</span> / Night</h6>
-                  </div>
-                </div>
+
+            {(this.state.data.length === 0) ? (
+              <span>Loading...</span>
+            ) : (
+              <div className="row">
+                {this.state.data.map(function(item, index) {
+                  return (
+                    <div className="col s6" key={index}>
+                      <div className="entry">
+                        <img src={"http://35.162.241.129:3000/uploads/" + item.coverImage.filename} alt="" />
+                        <div className="content">
+                          <h5><a href="">{item.title}</a></h5>
+                          <p>Lorem ipsum dolor sit amet . . .</p>
+                          <h6><span>$190</span> / Night</h6>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
-              <div className="col s6">
-                <div className="entry">
-                  <img src="img/room2.jpg" alt="" />
-                  <div className="content">
-                    <h5><a href="">Luxury Rooms</a></h5>
-                    <p>Lorem ipsum dolor sit amet . . .</p>
-                    <h6><span>$190</span> / Night</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col s6">
-                <div className="entry">
-                  <img src="img/room3.jpg" alt="" />
-                  <div className="content">
-                    <h5><a href="">Beautiful Rooms</a></h5>
-                    <p>Lorem ipsum dolor sit amet . . .</p>
-                    <h6><span>$190</span> / Night</h6>
-                  </div>
-                </div>
-              </div>
-              <div className="col s6">
-                <div className="entry">
-                  <img src="img/room4.jpg" alt="" />
-                  <div className="content">
-                    <h5><a href="">Luxury Rooms</a></h5>
-                    <p>Lorem ipsum dolor sit amet . . .</p>
-                    <h6><span>$190</span> / Night</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col s6">
-                <div className="entry">
-                  <img src="img/room5.jpg" alt="" />
-                  <div className="content">
-                    <h5><a href="">Beautiful Rooms</a></h5>
-                    <p>Lorem ipsum dolor sit amet . . .</p>
-                    <h6><span>$190</span> / Night</h6>
-                  </div>
-                </div>
-              </div>
-              <div className="col s6">
-                <div className="entry">
-                  <img src="img/room6.jpg" alt="" />
-                  <div className="content">
-                    <h5><a href="">Luxury Rooms</a></h5>
-                    <p>Lorem ipsum dolor sit amet . . .</p>
-                    <h6><span>$190</span> / Night</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
+            )}
+
+
             <div className="pagination">
               <ul>
                 <li><a href="">First</a></li>
@@ -252,28 +217,7 @@ class App extends Component {
           </div>
         </div>
 
-        <footer>
-          <div className="container">
-            <h6>Find & follow us</h6>
-            <ul className="icon-social">
-              <li className="facebook"><a href=""><i className="fa fa-facebook"></i></a></li>
-              <li className="twitter"><a href=""><i className="fa fa-twitter"></i></a></li>
-              <li className="google"><a href=""><i className="fa fa-google"></i></a></li>
-              <li className="instagram"><a href=""><i className="fa fa-instagram"></i></a></li>
-              <li className="rss"><a href=""><i className="fa fa-rss"></i></a></li>
-            </ul>
-            <div className="tel-fax-mail">
-              <ul>
-                <li><span>Tel:</span> 900000002</li>
-                <li><span>Fax:</span> 0400000098</li>
-                <li><span>Email:</span> info@youremail.com</li>
-              </ul>
-            </div>
-            <div className="ft-bottom">
-              <span>Copyright © 2017 All Rights Reserved </span>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     );
   }
