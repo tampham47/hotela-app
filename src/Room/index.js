@@ -4,6 +4,7 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import request from 'request';
 
 import Navbar from '../components/Navbar';
 
@@ -18,6 +19,15 @@ class App extends Component {
 
   componentDidMount() {
     console.log('componentDidMount');
+
+    request({
+      method: 'GET',
+      uri: 'http://35.162.241.129:3000/api/v1/room',
+    }, function (error, response, body) {
+      console.log('error:', error);
+      console.log('statusCode:', response && response.statusCode);
+      console.log('body:', body);
+    });
   }
 
   componentWillUnmount() {
