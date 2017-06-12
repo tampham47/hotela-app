@@ -9,6 +9,9 @@ import Login from './Login';
 import Register from './Register';
 import Faq from './Faq';
 import Contact from './Contact';
+import Room from './Room';
+import RoomDetail from './RoomDetail';
+
 import './index.css';
 
 const AppRouter = () => {
@@ -21,6 +24,8 @@ const AppRouter = () => {
         <Route path="/register" component={Register} />
         <Route path="/contact" component={Contact} />
         <Route path="/faq" component={Faq} />
+        <Route path="/room" component={Room} />
+        <Route path="/room-detail" component={RoomDetail} />
       </div>
     </HashRouter>
   )
