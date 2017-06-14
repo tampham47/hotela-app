@@ -20,13 +20,14 @@ class App extends Component {
         <p className="app-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+
         <Link to="/home">home</Link><br/>
         <Link to="/login">login</Link><br/>
         <Link to="/register">register</Link><br/>
         <Link to="/faq">faq</Link><br/>
         <Link to="/contact">contact</Link><br/>
         <Link to="/rooms">room</Link><br/>
-        <Link to="/room/5">room-detail</Link><br/>
+        <Link to="/room/593de77e1098b5cd7a06f4f8">room-detail</Link><br/>
       </div>
     );
   }
