@@ -49,6 +49,21 @@ class App extends Component {
   onPostComment(e) {
     e.preventDefault();
     alert('Post Comment Clicked !' + JSON.stringify(this.state.form));
+    const form = this.state.form;
+    form.roomId = this.props.match.params.id;
+
+    request({
+      method: 'post',
+      headers: {
+        'content-type': 'application/json'
+      },
+      url: 'http://35.162.241.129:3000/api/v1/comment',
+      body: JSON.stringify(form),
+    }, function (error, response, body) {
+      console.log('error', error);
+      console.log('response', response);
+      console.log('body', body);
+    }.bind(this));
   }
 
   onNameChange(e) {
