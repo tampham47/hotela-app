@@ -25,8 +25,8 @@ class App extends Component {
         <Link to="/register">register</Link><br/>
         <Link to="/faq">faq</Link><br/>
         <Link to="/contact">contact</Link><br/>
-        <Link to="/room">room</Link><br/>
-        <Link to="/room-detail">room-detail</Link><br/>
+        <Link to="/rooms">room</Link><br/>
+        <Link to="/room/5">room-detail</Link><br/>
       </div>
     );
   }

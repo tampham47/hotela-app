@@ -12,6 +12,7 @@ import './styles.css';
 class App extends Component {
   constructor(props) {
     super(props);
+    console.log('RomDetail', props.match.params.id);
 
     this.state = {
       form: {},

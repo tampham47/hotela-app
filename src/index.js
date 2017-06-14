@@ -24,8 +24,8 @@ const AppRouter = () => {
         <Route path="/register" component={Register} />
         <Route path="/contact" component={Contact} />
         <Route path="/faq" component={Faq} />
-        <Route path="/room" component={Room} />
-        <Route path="/room-detail" component={RoomDetail} />
+        <Route path="/rooms" component={Room} />
+        <Route path="/room/:id" component={RoomDetail} />
       </div>
     </HashRouter>
   )
