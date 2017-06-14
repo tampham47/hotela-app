@@ -36,6 +36,27 @@ class App extends Component {
         data: data
       })
     }.bind(this));
+
+    // fetch('http://35.162.241.129:3000/api/v1/room', {
+    //   method: 'get',
+    // })
+    // .then(function checkStatus(response) {
+    //   if (response.status >= 200 && response.status < 300) {
+    //     return response
+    //   } else {
+    //     var error = new Error(response.statusText)
+    //     error.response = response
+    //     throw error
+    //   }
+    // })
+    // .then(res => res.json())
+    // .then(function(data) {
+    //   console.log('request succeeded with JSON response', data)
+    //   this.setState({ data: data });
+    // }.bind(this))
+    // .catch(function(error) {
+    //   console.log('request failed', error)
+    // });
   }
 
   componentWillUnmount() {
