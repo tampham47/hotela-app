@@ -9,6 +9,17 @@ import './styles.css';
 
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.gotoHomePage = this.gotoHomePage.bind(this);
+  }
+
+  gotoHomePage() {
+    this.props.history.push('home');
+  }
+
   render() {
     return (
       <div>
@@ -169,7 +180,8 @@ class App extends Component {
                 <input type="checkbox" id="checkbox" />
                   <label for="checkbox">Remember me</label>
               </div>
-              <button className="button">Login</button>
+              <button className="button" onClick={this.gotoHomePage}>Login</button>
+
               <div className="create-account">Not Registered? <a href="">Create an account</a></div>
             </form>
             <div className="or">

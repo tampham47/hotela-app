@@ -213,7 +213,9 @@ class App extends Component {
                       <div className="entry">
                         <img src={"http://35.162.241.129:3000/uploads/" + item.coverImage.filename} alt="" />
                         <div className="content">
-                          <h5><a href="">{item.title}</a></h5>
+                          <h5>
+                            <Link to={'room/' + item._id}>{item.title}</Link>
+                            </h5>
                           <p>Lorem ipsum dolor sit amet . . .</p>
                           <h6><span>$190</span> / Night</h6>
                         </div>
@@ -223,7 +225,6 @@ class App extends Component {
                 })}
               </div>
             )}
-
 
             <div className="pagination">
               <ul>

@@ -13,6 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     console.log('RomDetail', props.match.params.id);
+    console.log('RomDetail', props);
 
     this.state = {
       form: {},
