@@ -21,8 +21,10 @@ class App extends Component {
       roomDetail: null,
     };
 
-    this.onNameChange = this.onNameChange.bind(this);
     this.onPostComment = this.onPostComment.bind(this);
+    this.onNameChange = this.onNameChange.bind(this);
+    this.onEmailChange = this.onEmailChange.bind(this);
+    this.onContentChange = this.onContentChange.bind(this);
   }
 
   componentDidMount() {
@@ -51,7 +53,28 @@ class App extends Component {
     console.log('onNameChange', e.target.value);
     this.setState({
       form: {
+        ...this.state.form,
         name: e.target.value
+      }
+    });
+  }
+
+  onEmailChange(e) {
+    console.log('onNameChange', e.target.value);
+    this.setState({
+      form: {
+        ...this.state.form,
+        email: e.target.value
+      }
+    });
+  }
+
+  onContentChange(e) {
+    console.log('onNameChange', e.target.value);
+    this.setState({
+      form: {
+        ...this.state.form,
+        content: e.target.value
       }
     });
   }
@@ -107,15 +130,17 @@ class App extends Component {
                 <h6>Post Comments</h6>
                 <div className="content">
                   <form action="#">
-                    <input type="text" placeholder="Name 2"
+                    <input type="text" placeholder="Name"
                       value={this.state.form.name}
                       onChange={this.onNameChange} />
                     <input type="email" placeholder="Email"
-                      value={this.state.form.email} />
+                      value={this.state.form.email}
+                      onChange={this.onEmailChange} />
                     <input type="text" placeholder="Website"
                       value={this.state.form.website} />
                     <textarea cols="20" rows="10" placeholder="Comment"
-                      value={this.state.form.comment}></textarea>
+                      value={this.state.form.comment}
+                      onChange={this.onContentChange}></textarea>
                     <button className="button" onClick={this.onPostComment}>Post Comment</button>
                   </form>
                 </div>
