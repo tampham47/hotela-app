@@ -8,6 +8,7 @@ import request from 'request';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import RoomItem from '../components/RoomItem';
 
 import './styles.css';
 
@@ -79,18 +80,7 @@ class App extends Component {
               <div className="row">
                 {this.state.data.map(function(item, index) {
                   return (
-                    <div className="col s6" key={index}>
-                      <div className="entry">
-                        <img src={"http://35.162.241.129:3000/uploads/" + item.coverImage.filename} alt="" />
-                        <div className="content">
-                          <h5>
-                            <Link to={'/room/' + item._id}>{item.title}</Link>
-                            </h5>
-                          <p>Lorem ipsum dolor sit amet . . .</p>
-                          <h6><span>{item.price}</span> / Night</h6>
-                        </div>
-                      </div>
-                    </div>
+                    <RoomItem {...item} />
                   )
                 })}
               </div>
