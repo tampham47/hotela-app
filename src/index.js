@@ -5,6 +5,7 @@ import { HashRouter, Route } from 'react-router-dom';
 
 import App from './App';
 import Home from './Home';
+import LeftMenu from './LeftMenu';
 import Login from './Login';
 import Register from './Register';
 import Faq from './Faq';
@@ -18,8 +19,9 @@ const AppRouter = () => {
   return (
     <HashRouter>
       <div>
-        <Route exact path="/" component={App} />
+        <Route exact path="/" component={LeftMenu} />
         <Route path="/home" component={Home} />
+        <Route path="/leftmenu" component={LeftMenu} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/contact" component={Contact} />

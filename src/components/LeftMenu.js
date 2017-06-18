@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 const Footer = function(props) {
   return (
     <div className="panel-control-left">
-      <ul id="slide-out-left" className="side-nav collapsible"  data-collapsible="accordion">
+      <ul id="slide-out-left" style={{ transform: 'translateX(0)' }}
+        className="side-nav collapsible" data-collapsible="accordion">
         <li>
-          <a href="index.html"><i className="fa fa-home"></i>Home</a>
+          <Link to='/home'><i className="fa fa-home"></i>Home</Link>
         </li>
         <li>
           <div className="collapsible-header"><i className="fa fa-file-text-o"></i>Categories<span><i className="fa fa-chevron-right"></i></span></div>
